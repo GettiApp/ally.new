@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ally AI</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .chat-container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .chat-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .chat-body {
+        padding: 20px;
+        height: 300px;
+        overflow-y: auto;
+    }
+    .chat-input {
+        width: calc(100% - 40px);
+        padding: 10px;
+        border: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        outline: none;
+    }
+    .chat-btn {
+        width: 40px;
+        height: 40px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<div class="chat-container">
+    <div class="chat-header">Ally AI</div>
+    <div class="chat-body" id="chat-body"></div>
+    <div>
+        <input type="text" id="user-input" class="chat-input" placeholder="Type a message...">
+        <button onclick="sendMessage()" class="chat-btn">&#10148;</button>
+    </div>
+</div>
+<script>
+    function sendMessage() {
+        var userInput = document.getElementById("user-input").value;
+        var chatBody = document.getElementById("chat-body");
+        
+        // Display user message
+        var userMessage = document.createElement("div");
+        userMessage.innerHTML = "<strong>You:</strong> " + userInput;
+        chatBody.appendChild(userMessage);
+        
+        // Simulate bot response (replace with actual AI logic)
+        var botResponse = document.createElement("div");
+        botResponse.innerHTML = "<strong>Ally AI:</strong> Hi there! How can I help you?";
+        chatBody.appendChild(botResponse);
+        
+        // Clear input field
+        document.getElementById("user-input").value = "";
+        
+        // Scroll to bottom of chat
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+</script>
+</body>
+</html>
